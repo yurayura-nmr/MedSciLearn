@@ -68,7 +68,7 @@ In Python, functions work in the same way. They take inputs (called **arguments*
 df = pd.read_csv(filename)
 ```
 
-Just like how f(3)=9, calling pd.read_csv("patients.csv") will give us a table of patient data that we can use in Python.
+Just like how `f(3) = 9`, calling pd.read_csv("patients.csv") will give us a table of patient data that we can use in Python.
 This idea applies to many functions in Python. For example, in our script:
 
 ```python
@@ -76,6 +76,29 @@ df["BMI"] = df["Weight"] / (df["Height"] ** 2)
 ```
 
 By understanding functions and arguments, you’ll be able to read and write Python code more easily!
+
+## **Understanding Assignment (=)**  
+
+In Python, `=` is the assignment operator. It does not mean equality (like in math, where x = 3 means "x is equal to 3"). Instead, it means:
+
+"Take the value on the right and store it in the variable on the left."
+
+For example:
+
+```python
+x = 5
+```
+
+This means: "Store the number 5 in the variable x." Now, whenever we use x, Python knows it refers to 5.
+Similarly, in our case:
+
+```python
+df = pd.read_csv(filename)
+```
+
+* pd.read_csv(filename) reads the file and returns a table of data.
+* = assigns this table to the variable df, so we can use it later in the program.
+
 
 **Run the script**:  
 ```bash
