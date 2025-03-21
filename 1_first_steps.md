@@ -54,6 +54,31 @@ df["BMI"] = df["Weight"] / (df["Height"] ** 2)
 print(df)
 ```
 
+## **Understanding Functions and Arguments in Python**  
+
+If you’ve studied mathematics, you’ve seen functions like this before:
+
+\[
+f(x) = x^2
+\]
+
+This function takes an input \( x \) and returns \( x^2 \). For example, if you input \( f(3) \), you get \( 9 \).
+
+In Python, functions work in the same way. They take inputs (called **arguments**) and return outputs. For example, consider the following line:
+
+```python
+df = pd.read_csv(filename)
+```
+
+Just like how f(3)=9, calling pd.read_csv("patients.csv") will give us a table of patient data that we can use in Python.
+This idea applies to many functions in Python. For example, in our script:
+
+```python
+df["BMI"] = df["Weight"] / (df["Height"] ** 2)
+```
+
+By understanding functions and arguments, you’ll be able to read and write Python code more easily!
+
 **Run the script**:  
 ```bash
 python cardiology.py
