@@ -41,7 +41,7 @@ Close and reopen the terminal for the changes to take effect.
 
 ## **2. Basic Unix Commands for File Manipulation**  
 
-Once you have Anaconda installed, it’s useful to know some basic Unix commands to navigate and manage files in the terminal.
+Once you have Anaconda installed, it’s useful to know some basic Unix commands to navigate and manage files in the terminal. These commands can be used directly in the terminal or included in scripts to automate tasks, but they are not considered programming—they are simply instructions for the shell to execute.
 
 ### **Navigation Commands**  
 | Command | Description | Example |
@@ -61,6 +61,13 @@ Once you have Anaconda installed, it’s useful to know some basic Unix commands
 | `cp <source> <destination>` | Copy a file | `cp file.txt backup/` |
 | `mv <source> <destination>` | Move or rename a file | `mv oldname.txt newname.txt` |
 
+### **Running Python Scripts in the Terminal**  
+You can run Python scripts directly from the terminal using the following command:
+
+| Command | Description | Example |
+|---------|------------|---------|
+| `python <script.py>` | Run a Python script | `python my_script.py` |
+
 ### **Viewing and Editing Files**  
 | Command | Description | Example |
 |---------|------------|---------|
@@ -77,6 +84,18 @@ Once you have Anaconda installed, it’s useful to know some basic Unix commands
 | `exit` | Close the terminal | `exit` |
 
 ---
+
+The Tab key is extremely useful in the terminal. Pressing Tab while typing a command or filename will autocomplete it if possible. For example:
+
+```bash
+cd my_pro<TAB>
+```
+
+If there is a folder named my_project, pressing Tab will complete it to:
+
+```bash
+cd my_project
+```
 
 ## **3. Next Steps**  
 - Practice using the commands above in the terminal.  
