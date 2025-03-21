@@ -99,6 +99,7 @@ df = pd.read_csv(filename)
 * pd.read_csv(filename) reads the file and returns a table of data.
 * = assigns this table to the variable df, so we can use it later in the program.
 
+Okay, now after this interlude on how functions work and what assignment is in python ...
 
 **Run the script**:  
 ```bash
