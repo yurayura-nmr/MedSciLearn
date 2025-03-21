@@ -58,9 +58,7 @@ print(df)
 
 If you’ve studied mathematics, you’ve seen functions like this before:
 
-\[
-f(x) = x^2
-\]
+`f(x) = x^2`
 
 This function takes an input \( x \) and returns \( x^2 \). For example, if you input \( f(3) \), you get \( 9 \).
 
