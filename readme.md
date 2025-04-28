@@ -61,6 +61,9 @@ Once you have Anaconda installed, it’s useful to know some basic Unix commands
 | `cp <source> <destination>` | Copy a file | `cp file.txt backup/` |
 | `mv <source> <destination>` | Move or rename a file | `mv oldname.txt newname.txt` |
 
+For more commands, I recommend the excellent "cheat sheet" here: [Cheat sheet](https://upload.wikimedia.org/wikipedia/commons/7/79/Unix_command_cheatsheet.pdf). 
+ 
+
 ### **Running Python Scripts in the Terminal**  
 You can run Python scripts directly from the terminal using the following command:
 
