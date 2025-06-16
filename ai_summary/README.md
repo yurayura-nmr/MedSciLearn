@@ -16,10 +16,6 @@ A Python tool that downloads research papers and creates Claude-optimized prompt
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/nature-paper-summarizer.git
-cd nature-paper-summarizer
-
 # Install dependencies
 pip install requests PyPDF2
 ```
