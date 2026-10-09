@@ -141,9 +141,40 @@ Your spectrometer saves raw data in Bruker format. NMRPipe needs to convert it f
 
 ---
 
-## 8. Running the Script
+## 8. Optional: Switching on Linear Prediction (Comments in Linux)
 
-Make sure you are in the experiment folder and in the tcsh shell, and that you have checked your edits with `cat` (step 7), then run:
+In Linux scripts, a line that starts with `#` is a **comment**: the computer ignores it completely. Script authors use this to leave notes, or to keep a command in the file without running it.
+
+```
+# this line is a comment and does nothing
+-fn LP auto      <- this line is active and will be executed
+```
+
+Our processing script contains some commands that are switched off by a `#`. To switch one on, you only have to **remove the `#`** (this is called *uncommenting*).
+
+1. Open the script:
+
+   ```
+   gedit fidft_hqsc.com &
+   ```
+
+2. Find the lines with `-lb` and `-fn LP auto` (in the processing section for the F1 dimension) and **delete the `#` at the beginning of those lines**. Leave everything else on the line unchanged.
+
+3. Save with **Ctrl+S** and check your edit again:
+
+   ```
+   cat fidft_hqsc.com
+   ```
+
+**What does this do?** `-fn LP auto` tells NMRPipe to perform **linear prediction** (LP). In an HSQC the F1 dimension (vertical, <sup>15</sup>N) is usually measured with only a small number of increments, because every extra point costs measurement time. LP uses the points that were measured to *predict* additional points. The result is a spectrum with **better resolution in the F1 dimension**, meaning sharper and better separated peaks along the <sup>15</sup>N axis.
+
+> Tip: You can run the script once with and once without the `#` and compare both spectra in `nmrDraw` to see the difference yourself.
+
+---
+
+## 9. Running the Script
+
+Make sure you are in the experiment folder and in the tcsh shell, and that you have checked your edits with `cat` (steps 7 and 8), then run:
 
 ```
 ./fidft_hqsc.com
@@ -155,7 +186,7 @@ If you get `Permission denied`, you forgot `chmod +x` (step 4). If you get `comm
 
 ---
 
-## 9. Looking at Your Spectrum: `nmrDraw`
+## 10. Looking at Your Spectrum: `nmrDraw`
 
 Open the NMRPipe viewer:
 
@@ -180,6 +211,7 @@ In the window that opens, load your processed spectrum (the `.ft2` file) via the
 | `bruker` | Convert Bruker data, generates `fid.com` |
 | `gedit` | Copy `fid.com` into the full processing script |
 | `cat` | Check that your edits are really in the script |
+| `#` | Comment: removing it from `-fn LP auto` switches on linear prediction |
 | `./fidft_hqsc.com` | Run the processing script |
 | `nmrDraw` | Display the spectrum |
 
