@@ -1,7 +1,6 @@
 # First Steps with NMRPipe
 
-This guide prepares you for your first NMRPipe session: moving around the terminal, 
-downloading processing scripts, converting raw Bruker data, and looking at your first spectrum.
+This guide prepares you for your first NMRPipe session: moving around the terminal, downloading processing scripts, converting raw Bruker data, and looking at your first spectrum.
 
 > **Before you start:** NMRPipe usually runs on Linux (or macOS with a working installation). The commands below assume NMRPipe is already installed on your computer or on the lab server. If `nmrDraw` is not found, ask your supervisor to check the NMRPipe setup.
 
@@ -132,11 +131,19 @@ Your spectrometer saves raw data in Bruker format. NMRPipe needs to convert it f
 
 > Only copy the part the script tells you to replace. Do not delete the Fourier transform commands that follow.
 
+5. **Verify your edit.** Before running anything, print the script in the terminal and check that your changes really went in:
+
+   ```
+   cat fidft_hqsc.com
+   ```
+
+   You should see the `bruk2pipe` block from `fid.com` (with your own spectral widths and number of points) in the conversion section, followed by the Fourier transform commands. If you still see the placeholder text, or the file looks unchanged, you probably forgot to save in `gedit` (**Ctrl+S**). Go back and repeat the edit.
+
 ---
 
 ## 8. Running the Script
 
-Make sure you are in the experiment folder and in the tcsh shell, then run:
+Make sure you are in the experiment folder and in the tcsh shell, and that you have checked your edits with `cat` (step 7), then run:
 
 ```
 ./fidft_hqsc.com
@@ -172,6 +179,8 @@ In the window that opens, load your processed spectrum (the `.ft2` file) via the
 | `tcsh` | Start the shell NMRPipe scripts need |
 | `bruker` | Convert Bruker data, generates `fid.com` |
 | `gedit` | Copy `fid.com` into the full processing script |
+| `cat` | Check that your edits are really in the script |
 | `./fidft_hqsc.com` | Run the processing script |
 | `nmrDraw` | Display the spectrum |
 
+**This is the end of the first lesson.** In the next lesson we will look at what the processing script actually does, line by line.
