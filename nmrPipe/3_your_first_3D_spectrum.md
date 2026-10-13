@@ -122,6 +122,32 @@ You should see the `bruk2pipe` block with your own parameters. If you still see 
 
 ---
 
+## 4. Run the Processing Script
+
+Make sure you are in the experiment folder and in the `tcsh` shell, and that you have checked your edit with `cat`. Then run:
+
+```
+./ft_hnco.com
+```
+
+The `./` means "run the file that is in *this* directory". If it works, new files appear (use `ls`).
+
+If you get `Permission denied`, you forgot `chmod +x` (step 1). If you get `command not found`, you probably forgot the `./`.
+
+---
+
+## 5. Display the Spectrum: `nd`
+
+Open the processed 3D spectrum with:
+
+```
+nd
+```
+
+Remember: if you suspend `nd` with **Ctrl+Z**, type `bg` and press **Enter** so that it keeps running.
+
+---
+
 ## Summary of Commands
 
 | Command | Purpose |
@@ -132,5 +158,7 @@ You should see the `bruk2pipe` block with your own parameters. If you still see 
 | `Ctrl+Z`, then `bg` | Suspend a program, then let it continue in the background |
 | `gedit` | Copy the parameters into `fid_hnco.com` |
 | `cat` | Check that the edit is really in the script |
+| `./ft_hnco.com` | Run the processing script |
+| `nd` | Display the processed spectrum |
 
-**To be continued:** in the next step we run `fid_hnco.com` and then `ft_hnco.com`.
+**To be continued:** in the next step we will phase the 3D spectrum.
