@@ -52,6 +52,20 @@ Check that the parameters shown (spectral widths, number of points, etc.) look r
 
 > You will not run this `fid.com` directly. We only use it as a source of the correct parameters for your experiment.
 
+### Tip: Ctrl+Z and `bg`
+
+Programs like `bruker` and `nd` (`nmrDraw`) keep your terminal busy while they are open. If you press **Ctrl+Z** to get your prompt back, the program is only **suspended**: its window stays open, but it is **frozen and unresponsive**.
+
+To let it continue running in the background, type:
+
+```
+bg
+```
+
+and press **Enter**. The window becomes responsive again and your terminal is free.
+
+> To avoid this, you can start a program in the background from the beginning by adding `&` (for example `bruker &` or `nd &`).
+
 ---
 
 ## 3. Adapt `fid_hnco.com` to Your Experiment
@@ -86,6 +100,7 @@ You should see the `bruk2pipe` block with your own parameters. If you still see 
 | `wget` | Download `fid_hnco.com` and `ft_hnco.com` |
 | `chmod +x` | Make both scripts executable |
 | `bruker` | Read the experiment parameters, generates `fid.com` |
+| `Ctrl+Z`, then `bg` | Suspend a program, then let it continue in the background |
 | `gedit` | Copy the parameters into `fid_hnco.com` |
 | `cat` | Check that the edit is really in the script |
 
