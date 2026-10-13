@@ -83,6 +83,35 @@ Save with **Ctrl+S** and close the editors.
 
 > Only replace the part the script tells you to replace. Keep the rest of the script as it is.
 
+### Warning: do not break the command chain
+
+NMRPipe commands are long chains of programs connected by pipes (`|`). To keep them readable, they are split over several lines. A backslash `\` at the end of a line means "the command **continues on the next line**":
+
+```
+nmrPipe -in test.fid          \
+| nmrPipe -fn SP -off 0.5     \
+| nmrPipe -fn ZF -auto        \
+-out test.ft                  \
+-ov
+```
+
+Every line has to be directly followed by the next line of the same command. An **empty line** in between breaks the chain, and the script will fail:
+
+```
+line \
+<empty line>      <-- WRONG: this breaks the command
+line \
+```
+
+Therefore, as a beginner, make only **minimal modifications**:
+
+- **Never press Enter to create a new line** inside a command chain, not even an empty one.
+- **Never delete a `|`** at the start of a line.
+- **Never delete a `\`** at the end of a line, and do not add any characters (not even a space) after it.
+- Only change the **values** you are told to change (numbers, file names), and nothing else.
+
+If your script suddenly stops working after an edit, run `cat` on it and look for an accidental empty line or a missing `|` or `\`.
+
 **Verify your edit.** Print the script and check that your changes really went in:
 
 ```
