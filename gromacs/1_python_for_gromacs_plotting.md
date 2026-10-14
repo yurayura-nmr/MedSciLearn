@@ -112,3 +112,52 @@ plt.show()
 ```
 
 That is the core workflow: **load the xvg data, inspect it, plot it, and histogram the values of interest**.
+
+
+## Addendum: Saving the Current Figure
+
+After making a plot or histogram, save the figure that is currently displayed with `plt.savefig()`.
+
+### Save as PDF
+
+```python
+plt.savefig("my_figure.pdf")
+```
+
+### Save as PNG
+
+```python
+plt.savefig("my_figure.png")
+```
+
+### Typical workflow
+
+```python
+plt.plot(x, y)
+plt.xlabel("Time (ps)")
+plt.ylabel("RMSD (nm)")
+
+plt.savefig("rmsd_plot.pdf")
+plt.savefig("rmsd_plot.png", dpi=300)
+plt.show()
+```
+
+- The file type is determined by the extension: `.pdf` or `.png`.
+- `dpi=300` is useful for a higher-resolution PNG, suitable for presentations or manuscripts.
+- Call `plt.savefig()` **before** `plt.show()`; after the plot window closes, the current figure may no longer be available.
+- The files are saved in the folder where you started Python, unless you provide a path, for example:
+
+```python
+plt.savefig("figures/rmsd_plot.pdf")
+```
+
+For a histogram, the same commands work:
+
+```python
+plt.hist(y, bins=50)
+plt.xlabel("RMSD (nm)")
+plt.ylabel("Number of frames")
+
+plt.savefig("rmsd_histogram.pdf")
+plt.show()
+```
