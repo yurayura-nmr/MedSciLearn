@@ -1,11 +1,6 @@
 # DSS Referencing: Finding the True 0 ppm
 
-In this lesson we leave the 3D processing for now and process a simple **1D proton spectrum** 
-of **DSS**.
-DSS is our chemical shift reference. 
-All we need from this lesson is **one number**: 
-the chemical shift of the DSS peak in our spectrum.
-We will later use this number for all our measurements.
+In this lesson we leave the 3D processing for now and process a simple **1D proton spectrum** of **DSS**. DSS is our chemical shift reference. All we need from this lesson is **one number**: the chemical shift of the DSS peak in our spectrum. We will later use this number for all our measurements.
 
 > **Before you start:** You should be in the `tcsh` shell. Stop the 3D work for now (close `nd` if it is still open).
 
@@ -20,11 +15,7 @@ DSS is added to the sample as an internal reference. In our lab:
 For example: 0.7 µl DSS stock solution for 350 µl sample
 ```
 
-The sharp methyl peak of DSS defines **0 ppm**. 
-Because the measured position of that peak is not exactly at 0.000 ppm in the spectrometer frequency scale,
-we measure where it really is. 
-From that number, a script later calculates the properly referenced 0 ppm points for <sup>1</sup>H, <sup>15</sup>N 
-and <sup>13</sup>C for any multidimensional experiment (for example HBHAcoNH, <sup>15</sup>N-edited NOESY).
+The sharp methyl peak of DSS defines **0 ppm**. Because the measured position of that peak is not exactly at 0.000 ppm in the spectrometer frequency scale, we measure where it really is. From that number, a script later calculates the properly referenced 0 ppm points for <sup>1</sup>H, <sup>15</sup>N and <sup>13</sup>C for any multidimensional experiment (for example HBHAcoNH, <sup>15</sup>N-edited NOESY).
 
 ---
 
@@ -132,9 +123,19 @@ Open the viewer:
 nd
 ```
 
-Load the processed 1D spectrum. Check the phase of the peaks as in Lesson 2.
+By default, `nd` tries to read the **FID file**, which is not what we want. Load the processed spectrum instead:
 
-If the peaks are **not perfectly in phase**, find the right p0 value with the p0 slider, put it into the first `PS -p0` line of `fidft_dss.com` (change only the number), save, run `./fidft_dss.com` again and recheck. This is the same procedure as in Lesson 2.
+1. Press **Shift+S** (Caps Lock must be off) to open the file selection window.
+2. Select **`dss.ft`**.
+3. Click **Read/Draw**.
+
+Now check the phase of the peaks.
+
+> **No `h` needed this time:** In Lesson 2 you pressed **`h`** to show a horizontal slice through a 2D spectrum. Our DSS spectrum is already **1D**, so you see the spectrum itself and there is nothing to slice.
+
+Just use the **p0 slider** (drag = large change, click next to it = small change) until **all peaks are in phase**, meaning they have a symmetric, positive, **absorptive lineshape**. Actually, we only need the DSS peak near 0 ppm to be phased (no need to have the protein part phased for now).
+
+Note down the p0 value you found and put it into the first `PS -p0` line of `fidft_dss.com` (change only the number), save, run `./fidft_dss.com` again and recheck. This is the same procedure as in Lesson 2.
 
 ---
 
@@ -163,7 +164,8 @@ Determine the **chemical shift of the DSS peak** in your spectrum, for example b
 | `gedit` | Copy the parameters into the `bruk2pipe` block |
 | `cat` | Check that the edit is really in the script |
 | `./fidft_dss.com` | Run the script |
-| `nd` | Display the 1D spectrum |
+| `nd` | Open the viewer |
+| Shift+S, select `dss.ft`, **Read/Draw** | Load the processed 1D spectrum (the default is the FID) |
 | p0 slider | Phase the spectrum if needed |
 | Zoom to 0 ppm | Find the sharp DSS peak |
 | Record the DSS shift | The one number we need for referencing |
