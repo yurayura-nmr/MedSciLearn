@@ -141,7 +141,14 @@ Note down the p0 value you found and put it into the first `PS -p0` line of `fid
 
 ## 7. Find the DSS Peak
 
-Zoom into the region around **0 ppm**. Look for the **sharp peak of DSS**. This is the DSS methyl signal.
+Zoom into the region around **0 ppm** and look for the **sharp peak of DSS**. This is the DSS methyl signal.
+
+To zoom in `nd`:
+
+1. Press **`z`**.
+2. **Draw a rectangle** around the region you want to see, using the mouse.
+3. **Right-click** the mouse to apply the zoom.
+4. Repeat if needed, until **only the DSS peak** is displayed.
 
 ---
 
@@ -167,7 +174,7 @@ Determine the **chemical shift of the DSS peak** in your spectrum, for example b
 | `nd` | Open the viewer |
 | Shift+S, select `dss.ft`, **Read/Draw** | Load the processed 1D spectrum (the default is the FID) |
 | p0 slider | Phase the spectrum if needed |
-| Zoom to 0 ppm | Find the sharp DSS peak |
+| `z`, draw a rectangle, right-click | Zoom in until only the DSS peak is displayed |
 | Record the DSS shift | The one number we need for referencing |
 
 **This is the end of the fifth lesson.**
