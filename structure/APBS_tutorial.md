@@ -86,15 +86,11 @@ png electrostatics.png, dpi=300
 
 `ray` renders a high-quality image and `png` saves it. Adjust the range (for example `[-3, 0, 3]`) if the colors look too weak or too saturated.
 
-### Quick alternative: the APBS Tools plugin
-
-If your PyMOL has the plugin: with the protein and `.dx` map loaded, go to **Plugin > APBS Electrostatics**, open the **Visualization** tab, and press **Show** in the *Molecular Surface* section. The default is blue at +1 kT and red at -1 kT.
-
 ## How to read the result
 
 - **Red regions** are negatively charged (acidic residues such as Asp and Glu).
 - **Blue regions** are positively charged (basic residues such as Lys and Arg).
-- **White regions** are roughly neutral or hydrophobic.
+- **White regions** are roughly neutral.
 
 Electrostatic patches often point to binding sites for DNA, ligands or other proteins.
 
